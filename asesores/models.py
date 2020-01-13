@@ -6,6 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+from django.utils.timezone import now 
 
 
 class AsesoresDb(models.Model):
@@ -22,8 +23,8 @@ class AsesoresDb(models.Model):
     comision = models.ForeignKey('Comisiones', models.DO_NOTHING, db_column='comision', blank=True, null=True)
     cedula = models.CharField(max_length=15, blank=True, null=True)
     c_cedula = models.CharField(max_length=150, blank=True, null=True)
-    fecha = models.DateTimeField(auto_now_add=True, blank=True, null=True, verbose_name="Fecha de creación")
-    fecha_s = models.DateTimeField(auto_now=True, blank=True, null=True, verbose_name="Fecha de Actualización")
+    fecha_creacion = models.DateTimeField(auto_now_add=True, blank=True, null=True, verbose_name="Fecha de creación")
+    fecha_actualizacion = models.DateTimeField(auto_now=True, blank=True, null=True, verbose_name="Fecha de Actualización")
     perfil = models.ForeignKey('Perfilasesor', models.DO_NOTHING, db_column='perfil', blank=True, null=True)
     fechanacimiento = models.DateField(db_column='fechaNacimiento', blank=True, null=True)  # Field name made lowercase.
     fechaexpedicion = models.DateField(db_column='fechaExpedicion', blank=True, null=True)  # Field name made lowercase.
@@ -39,7 +40,6 @@ class AsesoresDb(models.Model):
 
     def __str__(self):
         return self.nombre +" "+ self.apellido
-
 
 class Municipio(models.Model):
     codigo = models.AutoField(primary_key=True)
@@ -63,10 +63,11 @@ class Perfilasesor(models.Model):
         managed = False
         db_table = 'perfilasesor'
         verbose_name_plural = 'Perfil asesor' 
-
+    
     def __str__(self):
         return self.perfil
-
+        
+        
 class Genero(models.Model):
     codigo = models.AutoField(primary_key=True)
     genero = models.CharField(max_length=20)
