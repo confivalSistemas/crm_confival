@@ -41,6 +41,10 @@ INSTALLED_APPS = [
 
     # Apps
     'asesores',
+    'municipio',
+    'genero',
+    'comisiones',
+    'perfil_asesor',
 ]
 
 MIDDLEWARE = [

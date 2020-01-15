@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import AsesoresDb, Genero, Municipio, Perfilasesor, Comisiones
+from .models import AsesoresDb
+# from .models import AsesoresDb, Genero, Municipio, Perfilasesor, Comisiones
 # Register your models here.
 
 #admin.site.register(AsesoresDb)
@@ -25,7 +26,7 @@ class AsesoresDbAdmin(admin.ModelAdmin):
         'c_cedula',
         'fecha_creacion',
         'fecha_actualizacion',
-        'perfil',
+        'perfil__perfil',
         'fechanacimiento',
         'fechaexpedicion',
         'ciudadexpedicion__municipio',
@@ -54,17 +55,17 @@ class AsesoresDbAdmin(admin.ModelAdmin):
 
 admin.site.register(AsesoresDb, AsesoresDbAdmin)
     
-#admin.site.register(Perfilasesor)
-#===========================================================================================================
-#=> PERSONALIZANDO PERFILASESOR
-@admin.register(Perfilasesor)
-class PerfilAdmin(admin.ModelAdmin):
-    list_display = ('codigo', 'perfil')
-    list_filter = ('codigo','perfil')
+# #admin.site.register(Perfilasesor)
+# #===========================================================================================================
+# #=> PERSONALIZANDO PERFILASESOR
+# @admin.register(Perfilasesor)
+# class PerfilAdmin(admin.ModelAdmin):
+#     list_display = ('codigo', 'perfil')
+#     list_filter = ('codigo','perfil')
 
-#admin.site.register(Comisiones)
-#===========================================================================================================
-#=> PERSONALIZANDO COMISIONES
-@admin.register(Comisiones)
-class GeneroAdmin(admin.ModelAdmin):
-    list_display = ('tipo', 'descripcion', 'valor')
+# #admin.site.register(Comisiones)
+# #===========================================================================================================
+# #=> PERSONALIZANDO COMISIONES
+# @admin.register(Comisiones)
+# class GeneroAdmin(admin.ModelAdmin):
+#     list_display = ('tipo', 'descripcion', 'valor')
