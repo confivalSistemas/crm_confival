@@ -29,8 +29,8 @@ class AsesoresDb(models.Model):
     comision = models.ForeignKey(Comisiones, db_column='comision', blank=True, null=True, on_delete=models.PROTECT)
     cedula = models.CharField(max_length=15, blank=True, null=True)
     c_cedula = models.CharField(max_length=150, blank=True, null=True)
-    fecha = models.DateTimeField(auto_now_add=True)
-    fecha_s = models.DateTimeField(auto_now=True)
+    fecha = models.DateTimeField(auto_now_add=True, verbose_name='fecha de creación')
+    fecha_s = models.DateTimeField(auto_now=True, verbose_name='fecha de actualización')
     perfil = models.ForeignKey(Perfilasesor, db_column='perfil', blank=True, null=True, on_delete=models.PROTECT)
     fechanacimiento = models.DateField(db_column='fechaNacimiento', blank=True, null=True)  # Field name made lowercase.
     fechaexpedicion = models.DateField(db_column='fechaExpedicion', blank=True, null=True)  # Field name made lowercase.

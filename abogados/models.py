@@ -39,13 +39,13 @@ class DbAbogados(models.Model):
     fax = models.CharField(max_length=15, blank=True, null=True)
     e_mail1 = models.CharField(max_length=67, blank=True, null=True)
     e_mail2 = models.CharField(max_length=67, blank=True, null=True)
-    contacto = models.ForeignKey(OrigenContacto, db_column='contacto', blank=True, null=True, on_delete=models.PROTECT)
-    fecha_actualizacion = models.DateTimeField(auto_now=True, blank=True, null=True)
+    contacto = models.ForeignKey(OrigenContacto, db_column='contacto', blank=True, null=True, on_delete=models.PROTECT)    
+    fecha_actualizacion = models.DateTimeField(auto_now=True, blank=True, null=True, verbose_name='fecha de actualización')
     actualizacion = models.ForeignKey(AsesoresDb, db_column='actualizacion', blank=True, null=True, on_delete=models.PROTECT)
     observaciones = models.CharField(max_length=150, blank=True, null=True)
     fechaexpedicion = models.DateField(db_column='fechaExpedicion', blank=True, null=True)  # Field name made lowercase.
     ciudadexpedicion = models.ForeignKey(Municipio, db_column='ciudadExpedicion', blank=True, null=True, on_delete=models.PROTECT)  # Field name made lowercase.
-    genero = models.ForeignKey(Genero, db_column='genero', on_delete=models.PROTECT)
+    genero = models.ForeignKey(Genero, models.DO_NOTHING, db_column='genero')
 
     class Meta:
         managed = True
