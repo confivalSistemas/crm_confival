@@ -6,6 +6,14 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+from django.utils.timezone import now
+
+# importando modelos
+from genero.models import Genero
+from municipio.models import Municipio
+from perfil.models import Perfil
+from origen_contacto.models import OrigenContacto
+from asesores.models import AsesoresDb
 
 
 class DbAbogados(models.Model):
@@ -16,11 +24,11 @@ class DbAbogados(models.Model):
     tarjeta_p = models.IntegerField(blank=True, null=True)
     fecha_nacimiento = models.DateField(blank=True, null=True)
     direccion = models.CharField(max_length=154, blank=True, null=True)
-    ciudad = models.ForeignKey('Municipio', models.DO_NOTHING, db_column='ciudad', blank=True, null=True)
+    ciudad = models.ForeignKey(Municipio, db_column='ciudad', blank=True, null=True, related_name='DbAbogados.ciudad+', on_delete=models.PROTECT)
     ciudadnombre = models.CharField(db_column='ciudadNombre', max_length=27, blank=True, null=True)  # Field name made lowercase.
     departamento = models.CharField(max_length=18, blank=True, null=True)
     direccion2 = models.CharField(max_length=154, blank=True, null=True)
-    ciudad2 = models.ForeignKey('Municipio', models.DO_NOTHING, db_column='ciudad2', blank=True, null=True)
+    ciudad2 = models.ForeignKey(Municipio, db_column='ciudad2', blank=True, null=True, related_name='DbAbogados.ciudad2+', on_delete=models.PROTECT)
     perfil = models.ForeignKey('Perfil', models.DO_NOTHING, db_column='perfil', blank=True, null=True)
     empresa = models.CharField(max_length=56, blank=True, null=True)
     celular2 = models.CharField(max_length=15, blank=True, null=True)

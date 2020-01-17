@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'asesores',
     'perfil',
     'origen_contacto',
-    #'abogados',
+    'abogados',
 ]
 
 MIDDLEWARE = [
