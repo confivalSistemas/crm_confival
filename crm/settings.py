@@ -39,12 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Apps
-    'asesores',
+    # Apps    
     'municipio',
     'genero',
     'comisiones',
-    'perfil_asesor',
+    'perfil_asesor',    
+    'asesores',
+    'perfil',
+    'origen_contacto',
+    #'abogados',
 ]
 
 MIDDLEWARE = [

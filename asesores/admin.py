@@ -24,8 +24,8 @@ class AsesoresDbAdmin(admin.ModelAdmin):
         'comision__tipo',
         'cedula',
         'c_cedula',
-        'fecha_creacion',
-        'fecha_actualizacion',
+        'fecha',
+        'fecha_s',
         'perfil__perfil',
         'fechanacimiento',
         'fechaexpedicion',
@@ -47,11 +47,11 @@ class AsesoresDbAdmin(admin.ModelAdmin):
         }),
 
         ('Información Adicional', {
-            'fields': ('comision', 'c_cedula', 'fecha_creacion', 'fecha_actualizacion')
+            'fields': ('comision', 'c_cedula', 'fecha', 'fecha_s')
         }),
     )
 
-    readonly_fields = ("fecha_creacion", "fecha_actualizacion") 
+    readonly_fields = ("fecha", "fecha_s") 
 
 admin.site.register(AsesoresDb, AsesoresDbAdmin)
     

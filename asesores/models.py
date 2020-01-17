@@ -6,7 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
-#from django.utils.timezone import now 
+from django.utils.timezone import now 
 
 # importanto modelos
 from genero.models import Genero
@@ -29,8 +29,8 @@ class AsesoresDb(models.Model):
     comision = models.ForeignKey(Comisiones, db_column='comision', blank=True, null=True, on_delete=models.PROTECT)
     cedula = models.CharField(max_length=15, blank=True, null=True)
     c_cedula = models.CharField(max_length=150, blank=True, null=True)
-    fecha_creacion = models.DateTimeField(auto_now_add=True)
-    fecha_actualizacion = models.DateTimeField(auto_now=True)
+    fecha = models.DateTimeField(auto_now_add=True)
+    fecha_s = models.DateTimeField(auto_now=True)
     perfil = models.ForeignKey(Perfilasesor, db_column='perfil', blank=True, null=True, on_delete=models.PROTECT)
     fechanacimiento = models.DateField(db_column='fechaNacimiento', blank=True, null=True)  # Field name made lowercase.
     fechaexpedicion = models.DateField(db_column='fechaExpedicion', blank=True, null=True)  # Field name made lowercase.
@@ -46,10 +46,3 @@ class AsesoresDb(models.Model):
 
     def __str__(self):
         return self.nombre +" "+ self.apellido
-
-    #==========================================================================
-    #==> funcion para completar campos: ciudad_codigo, departamento
-    def autollenado(modeladmin, request, queryset):
-        print('esto es para completar campos')
-        queryset.update(status='p')
-    
