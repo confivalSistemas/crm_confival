@@ -15,3 +15,6 @@ class OrigenContacto(models.Model):
     class Meta:
         managed = False
         db_table = 'origen_contacto'
+
+    def __str__(self):
+        return self.contacto

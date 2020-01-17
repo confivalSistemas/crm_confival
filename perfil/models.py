@@ -15,3 +15,6 @@ class Perfil(models.Model):
     class Meta:
         managed = False
         db_table = 'perfil'
+
+    def __str__(self):
+        return self.perfil
