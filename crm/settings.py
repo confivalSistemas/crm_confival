@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # autocomplete 
+    'dal',
+    'dal_select2',
+    
+    # django rest
     'rest_framework',
 
     # Apps    

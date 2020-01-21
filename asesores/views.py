@@ -17,30 +17,17 @@ class MunicipioAPI(APIView):
         response = self.serializer(lista, many=True)
 
         return HttpResponse(json.dumps(response.data), content_type='application/json')
+#=======================================================================================
+#==> vista para autocompletar
+
+from dal import autocomplete
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# from dal import autocomplete
-# from municipio.models import Municipio
-
-# class AsesoresAutocomplete(autocomplete.Select2QuerySetView):
-#     def get_queryset(self):
-#         qs = Municipio.objects.all()
-#         if self.q:
-#             qs = qs.filter(codigo__istartswith=self.q)
-#         return qs
+class MunicipioAutocomplete(autocomplete.Select2QuerySetView):
+    def get_queryset(self):
+        qs = Municipio.objects.all()
+        if self.q:
+            qs = qs.filter(codigo__istartswith=self.q)
+        return qs
 
 
