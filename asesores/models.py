@@ -36,7 +36,9 @@ class AsesoresDb(models.Model):
     fechaexpedicion = models.DateField(db_column='fechaExpedicion', blank=True, null=True)  # Field name made lowercase.
     ciudadexpedicion = models.ForeignKey(Municipio, db_column='ciudadExpedicion', blank=True, null=True, related_name='AsesoresDb.ciudadexpedicion+', on_delete=models.PROTECT)  # Field name made lowercase.
     genero = models.ForeignKey(Genero, db_column='genero', on_delete=models.PROTECT)
-
+    cod_ciudad = models.CharField(max_length=15, blank=True, null=True)
+    municipio = models.CharField(max_length=27, blank=True, null=True)
+    
     class Meta:
         managed = True
         db_table = 'asesores_db'
@@ -46,3 +48,4 @@ class AsesoresDb(models.Model):
 
     def __str__(self):
         return self.nombre +" "+ self.apellido
+    

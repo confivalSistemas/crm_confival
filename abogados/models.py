@@ -15,6 +15,12 @@ from perfil.models import Perfil
 from origen_contacto.models import OrigenContacto
 from asesores.models import AsesoresDb
 
+# OPTIONS_GENERO = [
+#     ('M', 'Masculino_'),
+#     ('F', 'Femenino'),
+#     ('No', 'No Informa'),
+# ]
+
 class DbAbogados(models.Model):
     codigo = models.AutoField(primary_key=True)
     nombres = models.CharField(max_length=51)

@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # autocomplete 
+    'rest_framework',
+
     # Apps    
     'municipio',
     'genero',

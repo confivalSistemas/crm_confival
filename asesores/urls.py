@@ -1,8 +1,6 @@
 from django.urls import path
-from asesores import views
+from asesores.views import MunicipioAPI
 
 urlpatterns = [
-    path('registro_asesores/', views.registro, name="registro_asesores"),    
+    path('api-municipio/', MunicipioAPI.as_view(), name="api-municipio"),    
 ]
-
-# SUJETO A CAMBIOS DE URL DEACUERDO A LA NECESIDAD

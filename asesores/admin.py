@@ -10,48 +10,48 @@ from .models import AsesoresDb
 class AsesoresDbAdmin(admin.ModelAdmin):
     list_display = ('cod_asesor', 'nombre', 'apellido', 'direccion', 'ciudad', 'celular', 't_asesor', 'mail', 'perfil')
     #list_filter = ('cod_asesor', 'nombre')
-    search_fields = [
-        'cod_asesor',
-        'nombre',
-        'apellido',
-        'direccion',
-        'ciudad__municipio',
-        'direccion2',
-        'ciudad2__municipio',
-        'celular',
-        'mail',
-        't_asesor',
-        'comision__tipo',
-        'cedula',
-        'c_cedula',
-        'fecha',
-        'fecha_s',
-        'perfil__perfil',
-        'fechanacimiento',
-        'fechaexpedicion',
-        'ciudadexpedicion__municipio',
-        'genero__genero',
-    ]
+    # search_fields = [
+    #     'cod_asesor',
+    #     'nombre',
+    #     'apellido',
+    #     'direccion',
+    #     'ciudad__municipio',
+    #     'direccion2',
+    #     'ciudad2__municipio',
+    #     'celular',
+    #     'mail',
+    #     't_asesor',
+    #     'comision__tipo',
+    #     'cedula',
+    #     'c_cedula',
+    #     'fecha',
+    #     'fecha_s',
+    #     'perfil__perfil',
+    #     'fechanacimiento',
+    #     'fechaexpedicion',
+    #     'ciudadexpedicion__municipio',
+    #     'genero__genero',        
+    # ]
     
-    fieldsets = (
-        ('Datos Básicos', {
-            'fields': ('nombre', 'apellido', 'cedula', 'fechanacimiento', 'fechaexpedicion', 'ciudadexpedicion', 'genero', 'perfil')
-        }),
+    # fieldsets = (
+    #     ('Datos Básicos', {
+    #         'fields': ('nombre', 'apellido', 'cedula', 'fechanacimiento', 'fechaexpedicion', 'ciudadexpedicion', 'genero', 'perfil')
+    #     }),
 
-        ('Contacto', {
-            'fields': ('celular', 'mail', 't_asesor')
-        }),
+    #     ('Contacto', {
+    #         'fields': ('celular', 'mail', 't_asesor')
+    #     }),
 
-        ('Localización', {
-            'fields': ('direccion', 'ciudad', 'direccion2', 'ciudad2')
-        }),
+    #     ('Localización', {
+    #         'fields': ('direccion', 'ciudad', 'direccion2', 'cod_ciudad', 'departamento')
+    #     }),
 
-        ('Información Adicional', {
-            'fields': ('comision', 'c_cedula', 'fecha', 'fecha_s')
-        }),
-    )
+    #     ('Información Adicional', {
+    #         'fields': ('comision', 'c_cedula', 'fecha', 'fecha_s')
+    #     }),
+    # )
 
-    readonly_fields = ("fecha", "fecha_s") 
+    # readonly_fields = ("fecha", "fecha_s") 
 
 admin.site.register(AsesoresDb, AsesoresDbAdmin)
     
