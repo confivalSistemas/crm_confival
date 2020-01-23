@@ -59,5 +59,7 @@ class DbAbogadosAdmin(admin.ModelAdmin):
     # )
 
     readonly_fields = ["fecha_actualizacion"]
+    radio_fields = {'genero': admin.HORIZONTAL, 'contacto': admin.HORIZONTAL}
+    
 
 admin.site.register(DbAbogados, DbAbogadosAdmin)

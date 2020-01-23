@@ -9,6 +9,7 @@ from .models import AsesoresDb
 
 class AsesoresDbAdmin(admin.ModelAdmin):
     list_display = ('cod_asesor', 'nombre', 'apellido', 'direccion', 'ciudad', 'celular', 't_asesor', 'mail', 'perfil')
+    radio_fields = {'genero': admin.HORIZONTAL}
     #list_filter = ('cod_asesor', 'nombre')
     # search_fields = [
     #     'cod_asesor',

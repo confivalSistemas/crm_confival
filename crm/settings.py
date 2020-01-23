@@ -95,7 +95,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-            'read_default_file': 'C:/Users/Intel I7/Desktop/CONFIVAL/PROYECTOS DJANGO/CRM/crm/conexion.cnf',# asignar ruta de archivo conexion.cnf
+            #'read_default_file': 'C:/Users/Intel I7/Desktop/CONFIVAL/PROYECTOS DJANGO/CRM/crm/conexion.cnf',# asignar ruta de archivo conexion.cnf
+            'read_default_file': 'C:/Users/Jhon Jairo/Desktop/CRM_CONFIVAL/crm_confival/crm/conexion.cnf'
         },
     }
 }
