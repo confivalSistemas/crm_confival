@@ -37,7 +37,7 @@ class AsesoresDb(models.Model):
     ciudadexpedicion = models.ForeignKey(Municipio, db_column='ciudadExpedicion', blank=True, null=True, related_name='AsesoresDb.ciudadexpedicion+', on_delete=models.PROTECT)  # Field name made lowercase.
     genero = models.ForeignKey(Genero, db_column='genero', on_delete=models.PROTECT)
     cod_ciudad = models.CharField(max_length=15, blank=True, null=True)
-    municipio = models.CharField(max_length=27, blank=True, null=True)
+    departamento = models.CharField(max_length=18, blank=True, null=True)
     
     class Meta:
         managed = True
